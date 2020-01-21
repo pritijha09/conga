@@ -20,7 +20,7 @@ export class ChangeBgColorDirective {
 
   @HostListener('mouseleave') onMouseLeave() {
     this.changeBackgroundColor('green');
-     this.border = '5px solid yellow';
+     this.border = '5px solid blue';
   }
 
   changeBackgroundColor(color: string){
