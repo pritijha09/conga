@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Renderer, HostListener} from '@angular/core';
+import {Directive, ElementRef, Renderer, HostListener, HostBinding} from '@angular/core';
 
 @Directive({
   selector: '[appChbgcolor]'
@@ -8,8 +8,10 @@ export class ChangeBgColorDirective {
     //this.ChangeBgColor('red');
   }
 
+@HostBinding('style.border') border: string;
   @HostListener('mouseover') onMouseOver() {
     this.changeBackgroundColor('red');
+    this.border = '5px solid green';
   }
 
   @HostListener('click') onClick() {
@@ -18,6 +20,7 @@ export class ChangeBgColorDirective {
 
   @HostListener('mouseleave') onMouseLeave() {
     this.changeBackgroundColor('green');
+     this.border = '5px solid yellow';
   }
 
   changeBackgroundColor(color: string){
